@@ -1,0 +1,7 @@
+cc.baseevent entries for 1 customer : 19000 total, 1100(last 24 hours)
+cc.hourlytimestamp 24 entries(1 for each hour)
+
+static String domainId = "OP5IDTwJRGaOMaYEiZa48A";
+    static String customerId = "dP1KRVWHSpCY5E-ovzCObw";
+
+OP5IDTwJRGaOMaYEiZa48A_dP1KRVWHSpCY5E-ovzCObw
