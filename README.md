@@ -11,3 +11,4 @@
         #$HADOOP_PREFIX/bin/hdfs namenode -format
 - http://www.alexjf.net/blog/distributed-systems/hadoop-yarn-installation-definitive-guide/
 - Check web ui: http://192.168.33.10:50070/dfshealth.html#tab-overview , http://192.168.33.11:8088/cluster/nodes
+- Resource Manager: 192.168.33.11       NameNode: 192.168.33.10
