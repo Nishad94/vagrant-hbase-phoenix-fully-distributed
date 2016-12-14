@@ -1,3 +1,4 @@
+<configuration>
 <property>
         <name>dfs.datanode.data.dir</name>
         <value>file:///home/vagrant/hadoop/hdfs/datanode</value>
@@ -9,3 +10,4 @@
         <value>file:///home/vagrant/hadoop/hdfs/namenode</value>
         <description>Path on the local filesystem where the NameNode stores the namespace and transaction logs persistently.</description>
     </property>
+</configuration>
