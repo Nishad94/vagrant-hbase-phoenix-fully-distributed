@@ -1,6 +1,37 @@
-select "suep-event-hour" , SUM(CASE WHEN "TypeID" = 4353 THEN 1 ELSE 0 END) AS "suep-event-count"  
-FROM (select es."TypeID",es."EventID", adjust_tz(es."DeviceTime",'?timeZoneOffset;') event_time, trunc(adjust_tz(es."DeviceTime",'?timeZoneOffset;'), 'hour') as "event_hour"  
-from "CC"."BaseEvent" es where trunc(adjust_tz(es."DeviceTime",'?timeZoneOffset;'), 'hour') >= (adjust_tz(now(),'?timeZoneOffset;') - 1.1)) event_time_data 
-right outer join (select "CC"."HOURLYTIMESTAMP"."TimestampHour" AS "suep-event-hour" from "CC"."HOURLYTIMESTAMP" 
-WHERE "CC"."HOURLYTIMESTAMP"."TimestampHour" between (adjust_tz(now(),'?timeZoneOffset;') - 1) and adjust_tz(now(),'?timeZoneOffset;')) all_days 
-on "event_hour" = adjust_tz("suep-event-hour",'60') group by "suep-event-hour" order by 1 asc",
+<configuration>
+  <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>192.168.33.11</value>
+        <description>The hostname of the RM.</description>
+    </property>
+    <property>
+        <name>yarn.scheduler.minimum-allocation-mb</name>
+        <value>128</value>
+        <description>Minimum limit of memory to allocate to each container request at the Resource Manager.</description>
+    </property>
+    <property>
+        <name>yarn.scheduler.maximum-allocation-mb</name>
+        <value>2048</value>
+        <description>Maximum limit of memory to allocate to each container request at the Resource Manager.</description>
+    </property>
+    <property>
+        <name>yarn.scheduler.minimum-allocation-vcores</name>
+        <value>1</value>
+        <description>The minimum allocation for every container request at the RM, in terms of virtual CPU cores. Requests lower than this won't take effect, and the specified value will get allocated the minimum.</description>
+    </property>
+    <property>
+        <name>yarn.scheduler.maximum-allocation-vcores</name>
+        <value>2</value>
+        <description>The maximum allocation for every container request at the RM, in terms of virtual CPU cores. Requests higher than this won't take effect, and will get capped to this value.</description>
+    </property>
+    <property>
+        <name>yarn.nodemanager.resource.memory-mb</name>
+        <value>4096</value>
+        <description>Physical memory, in MB, to be made available to running containers</description>
+    </property>
+    <property>
+        <name>yarn.nodemanager.resource.cpu-vcores</name>
+        <value>4</value>
+        <description>Number of CPU cores that can be allocated for containers.</description>
+    </property>
+</configuration>
