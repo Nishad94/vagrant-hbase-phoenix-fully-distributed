@@ -1,7 +1,11 @@
-cc.baseevent entries for 1 customer : 19000 total, 1100(last 24 hours)
-cc.hourlytimestamp 24 entries(1 for each hour)
+<property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///home/vagrant/hadoop/hdfs/datanode</value>
+        <description>Comma separated list of paths on the local filesystem of a DataNode where it should store its blocks.</description>
+    </property>
 
-static String domainId = "OP5IDTwJRGaOMaYEiZa48A";
-    static String customerId = "dP1KRVWHSpCY5E-ovzCObw";
-
-OP5IDTwJRGaOMaYEiZa48A_dP1KRVWHSpCY5E-ovzCObw
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///home/vagrant/hadoop/hdfs/namenode</value>
+        <description>Path on the local filesystem where the NameNode stores the namespace and transaction logs persistently.</description>
+    </property>
